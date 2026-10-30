@@ -1,0 +1,15 @@
+# Core web stack for the real-time interviewer (python -m interviewer.app)
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+websockets>=12.0
+webrtcvad>=2.0.10        # use webrtcvad-wheels if no prebuilt wheel exists
+piper-tts>=1.2.0
+
+# Interview reasoning via LM Studio's OpenAI-compatible API
+openai>=1.50.0
+
+# Speech recognition
+faster-whisper>=1.1.0
+
+# Legacy single-question prototype UI (streamlit run app_v1.1.py)
+streamlit>=1.40.0

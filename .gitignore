@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environment (never commit)
+ai_dsa_env/
+.venv/
+
+# Downloaded / generated model weights.
+# The Piper voice is auto-downloaded on first run (interviewer/tts.py);
+# the Whisper model caches to ~/.cache/huggingface. Keep the repo light.
+models/piper/*.onnx
+models/piper/*.onnx.json
+models/piper/*.part
+
+# OS / editor noise
+.DS_Store

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Local DSA Voice Interviewer — Real-time</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header>
+    <h1>🎙️ Local DSA Voice Interviewer</h1>
+    <div class="header-right">
+      <span id="statusChip" class="chip state-idle">IDLE</span>
+      <span id="timer">00:00</span>
+    </div>
+  </header>
+
+  <main>
+    <section id="setupPanel" class="panel">
+      <h2>1. Interview setup</h2>
+      <label>Choose a DSA problem</label>
+      <select id="questionSelect"></select>
+
+      <div class="info" id="questionInfo"></div>
+      <details open>
+        <summary>Problem statement</summary>
+        <p id="problemStatement"></p>
+      </details>
+
+      <label>Interview length</label>
+      <select id="durationSelect">
+        <option value="15">15 minutes</option>
+        <option value="20">20 minutes</option>
+        <option value="30" selected>30 minutes</option>
+        <option value="45">45 minutes</option>
+        <option value="60">60 minutes</option>
+      </select>
+
+      <label>Name (optional)</label>
+      <input id="nameInput" type="text" placeholder="Candidate" />
+
+      <button id="startButton" class="primary">🚀 Start interview</button>
+      <p class="hint">
+        Speak naturally — the interviewer listens continuously and answers
+        when you finish. Just start talking; no buttons while practicing.
+      </p>
+    </section>
+
+    <section class="panel" id="conversationPanel">
+      <h2>2. Interview conversation</h2>
+      <div id="statePanel" class="state-panel hidden">
+        <span class="sp-item"><b>Stage</b> <span id="spPhase">–</span></span>
+        <span class="sp-item"><b>Hints</b> <span id="spHints">0</span></span>
+        <span class="sp-item"><b>Last action</b> <span id="spAction">–</span></span>
+        <span class="sp-item"><b>Complexity</b> <span id="spComplexity">–</span></span>
+        <span class="sp-item" id="spIssues"></span>
+      </div>
+      <div id="micNotice" class="notice hidden">
+        Microphone is off. Start an interview to enable it.
+      </div>
+      <div id="chat" class="chat"></div>
+      <div class="controls">
+        <button id="interruptButton" disabled>⏸ Interrupt interviewer</button>
+        <button id="endButton" disabled>⏹ End interview and get feedback</button>
+        <button id="resetButton" disabled>🧹 Reset</button>
+      </div>
+      <p id="footer" class="hint">
+        Privacy: everything runs locally — LM Studio (reasoning),
+        faster-whisper (listening), Piper (speaking). No code is executed.
+      </p>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
