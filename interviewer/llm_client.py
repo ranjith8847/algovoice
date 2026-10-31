@@ -1,6 +1,6 @@
 """LM Studio (OpenAI-compatible) client for the voice interviewer.
 
-Two key behaviours carried over from the fixes made to app_v1.1.py:
+Two key behaviours for robust local-model integration:
 - Messages are normalized before every request (some local model chat
   templates, e.g. Qwen 3.x, reject a history whose first non-system
   message is an assistant turn with HTTP 400 "No user query found").

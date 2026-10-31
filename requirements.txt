@@ -10,6 +10,3 @@ openai>=1.50.0
 
 # Speech recognition
 faster-whisper>=1.1.0
-
-# Legacy single-question prototype UI (streamlit run app_v1.1.py)
-streamlit>=1.40.0

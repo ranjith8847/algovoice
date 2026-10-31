@@ -1,4 +1,4 @@
-"""Interviewer persona and DSA question bank (carried over from app_v1.1.py)."""
+"""Interviewer persona and DSA question bank."""
 
 from __future__ import annotations
 
